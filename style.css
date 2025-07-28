@@ -1,0 +1,160 @@
+body {
+    margin:0;
+    padding: 0;
+    background-color: #003C57;
+    width: auto;
+    height: auto;
+    left: 50%;
+    top: auto;
+    position: absolute;
+    background: #003C57;
+    transform: translateX(-50%);
+    overflow-x: hidden;
+}
+
+.main-wrapper {
+    position: relative; 
+    width: 5755px; 
+    margin: 0 auto; 
+
+}
+
+.main-content-area {
+    width: 5755px;
+    height: 2111px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page2 {
+    position: relative;
+    width: 3310.67px;
+    height: 1080px;
+    overflow: hidden;
+    margin: 0 auto; 
+    background-color: #FFFF9E; 
+}
+
+.page3 {
+    position: relative;
+    width: 5755px; 
+    height: 1080px;
+    overflow: hidden;
+    margin: 0 auto; 
+    background-color: #FFFF9E; 
+}
+
+.page2 > div[style*="background: #FFFF9E"] {
+    width: 1920px;
+    height: 1080px;
+    left: 695.33px;
+    top: 0px;
+    position: absolute;
+    background: #FFFF9E;
+    z-index: -1; 
+}
+
+.page3 .background-yellow {
+    width: 1920px;
+    height: 1080px;
+    left: 1917.72px;
+    top: 0px;
+    position: absolute;
+    background: #FFFF9E;
+    z-index: -1; 
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+#speedlines-1,
+#speedlines-2 {
+    animation: blink 0.2s infinite alternate;
+}
+
+
+#headlight-light {
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; 
+    z-index: 1; 
+}
+
+#gt40-top:hover ~ #headlight-light,
+#ferrari-left:hover ~ #headlight-light,
+#ford-left:hover ~ #headlight-light {
+    opacity: 1; 
+}
+
+#gt40-top,
+#ferrari-left,
+#ford-left {
+    z-index: 2; 
+    position: absolute;
+}
+
+@keyframes moveLeftRight {
+    0%, 100% { transform: translateX(0); }
+    100% { transform: translateX(100px); }
+}
+
+#ferrari-left,
+#ford-left {
+    animation: moveLeftRight 3s infinite alternate ease-in-out;
+}
+
+#road-page-2 {
+    z-index: 2; 
+}
+
+#gt40-front:hover
+#ferrari-front:hover {
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.main-content-area img:not(#headlight-light):not(#gt40-top):not(#ferrari-left):not(#ford-left):not(#road-page-2) {
+    z-index: 1; 
+}
+
+#gt40-poem,
+#ferrari-poem {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; 
+    z-index: 10; 
+}
+
+
+#ferrari-front,
+#gt40-front {
+    transition: transform 0.3s ease-in-out; 
+    z-index: 11; 
+}
+
+#ferrari-front:hover,
+#gt40-front:hover {
+    transform: scale(1.1); 
+}
+
+#ferrari-front:hover ~ #ferrari-poem {
+    opacity: 1;
+}
+
+#gt40-front:hover ~ #gt40-poem {
+    opacity: 1;
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+#gt40-rear {
+    animation: moveUpDown 2s infinite alternate ease-in-out; 
+}
